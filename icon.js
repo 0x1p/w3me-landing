@@ -1,4 +1,5 @@
-console.log('ready1')
+
+console.log('ready4');
 
 const word1 = document.querySelector('#word1')
 const word2 = document.querySelector('#word2')
@@ -6,8 +7,8 @@ const word3 = document.querySelector('#word3')
 const word4 = document.querySelector('#word4')
 const word5 = document.querySelector('#word5')
 
-const icon1 = document.querySelector('#uniswap1')
 
+const icon1 = document.querySelector('#uniswap1')
 const icon2a = document.querySelector('#uniswap2a')
 const icon2b = document.querySelector('#uniswap2b')
 const icon2c = document.querySelector('#uniswap2c')
@@ -75,6 +76,7 @@ const icon5y = document.querySelector('#uniswap5y')
 
 
 
+
 const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
 const viewportCenter = viewportHeight / 2;
@@ -84,17 +86,22 @@ const viewportEqual = viewportHeight / 5;
 const wordDisappear = viewportHeight / 10 * 4;
 
 
+
 // word1
-window.addEventListener("scroll", function() {
-  if(word1.getBoundingClientRect().top < wordDisappear) {
-    word1.classList.add('hidden');
-  } else {
-    word1.classList.remove('hidden');
-  }
-})
+// window.addEventListener("scroll", function() {
+//   console.log('im here');
+//   if(word1.getBoundingClientRect().top < viewportHeight / 2) {
+//     word1.classList.add('hidden');
+//   } else {
+//     word1.classList.remove('hidden');
+//   }
+// })
 
 // icon1
-window.addEventListener("scroll", function() {
+
+// const frontContainer = document.querySelector('front-container');
+
+window.gameScreen.addEventListener("scroll", function() {
   if(word1.getBoundingClientRect().top < viewportCenter) {
     icon1.classList.remove('hidden');
     icon1.classList.add('visible');
@@ -103,6 +110,7 @@ window.addEventListener("scroll", function() {
     icon1.classList.add('hidden');
   }
 })
+
 
 // word2
 window.addEventListener("scroll", function() {

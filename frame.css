@@ -1,15 +1,6 @@
 body {
   background-color: white;
   font-size: 16px;
-  /* to remove scroll bar */
-  margin: 0;
-  overflow: hidden;
-}
-
-#root {
-  height: 100vh;
-  overflow: auto;
-  padding-right: 15px;
 }
 
 /* START */
@@ -17,11 +8,12 @@ body {
 /* gameboy screen - used for toggle later. #8bac0f */
 
 .outer-box {
-  min-height: 95vh;
-  min-width: 960px;
+  /* min-height: 95vh;
+  min-width: 960px; */
   max-width: 1280px;
-  margin: 1rem;
+  margin: 1rem 0;
   background-color: #c0c0c0;
+  /* Keeps the div in the middle of screen */
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
@@ -32,9 +24,6 @@ body {
 
 .top-line {
   display: flex;
-  /* justify-content: space-between; */
-  width: 100%;
-  border: none;
   border-bottom: solid rgb(173, 171, 171) 0.5rem;
 }
 
@@ -60,9 +49,8 @@ body {
 
 /* The switch - the box around the slider */
 .switch-border {
-    /* margin: 1rem 2.5rem; */
     padding: 0.2rem;
-    background-color: azure;
+    background-color: grey;
     border-radius: 0.3rem;
 }
 
@@ -86,12 +74,12 @@ body {
 /* The slider */
 .slider {
   position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #efeceb;;
+  cursor: pointer;
+  background-color: rgb(173, 171, 171);
   -webkit-transition: .2s;
   transition: .2s;
   border-radius: 0.3rem;
@@ -100,23 +88,12 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  
   height: 1.75rem;
   width: 1.75rem;
-  
   background-color: #5d5b7e;
   -webkit-transition: .3s;
   transition: .3s;
   border-radius: 0.3rem;
-}
-
-input:checked + .slider {
-  /* background-color: grey;
-  box-shadow: -0.15rem -0.15rem 0 0 grey; */
-}
-
-input:focus + .slider {
-  /* box-shadow: 0 0 1px #2196F3; */
 }
 
 input:checked + .slider:before {
@@ -126,20 +103,13 @@ input:checked + .slider:before {
 }
 
 .on-btn, .off-btn {
+  font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   font-size: 1rem;
-}
-
-
-.on-btn {
+  color: grey;
   margin: 0 0.5rem;
+  -webkit-text-stroke-width: 0.05rem;
 }
-
-.off-btn {
-  margin: 0 0.5rem;
-
-}
-
 
 .on-off-signal {
   background-color: #ff0000;
@@ -150,38 +120,20 @@ input:checked + .slider:before {
   top: 12rem;
   left: 3.5rem;
   z-index: 1;
+  transition: 300ms;
+  border: 0.1rem solid #c0c0c0;
 }
 
-.home-container {
-  display: flex;
-  justify-content: center;
-}
-
-.home-btn {
-  background-color: #ff0000;
-  border-radius: 0.5rem;
-  height: 2rem;
-  width: 6rem;
-  /* position: fixed;
-    bottom: 0;
-    left: 50%; */
-  box-shadow: 0.2rem -0.2rem 0 0 rgb(197, 126, 126);
-  /* transform: translate(-50%, -50%); */
-  z-index: 1;
-  margin: 0.5rem;
-}
-
-#menu-btn:hover {
-  cursor: pointer;
-}
 
 /* Game screen */
 
-.game-screen-border {
+.game {
   margin: 1rem 2.5rem;
-  padding: 3rem;
-  padding-top: 2rem;
-  background-color: #5d5b7e;
+  border: 3rem solid #5d5b7e;
+  /* border-top: 2rem solid #5d5b7e;  */
+  /* padding: 3rem;
+  padding-top: 2rem; */
+  background-color: #f0ece5;
   border-radius: 1rem;
   position: relative;
 }
@@ -191,8 +143,11 @@ input:checked + .slider:before {
   overflow: hidden;
   position: relative;
   max-height: 75vh;
+  /* background-color: #f0ece5; */
   background-color: #f0ece5;
   overflow: auto;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  padding: 0 3rem;
 
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
@@ -202,17 +157,31 @@ input:checked + .slider:before {
   display: none;
 }
 
+
+/* Up Down Arrows */
 .arrow {
   position: sticky;
-  top: 95%;
-  left: 95%;
-  /* transform: translate(-50%,-50%); */
-  z-index: ;
+  z-index: 2;
+  border: 0;
+  font-size: 1rem;
 }
 
 .flashing {
   animation: flashingAnimation 2s ease-in-out infinite alternate;
 }
+
+.arrow-up {
+  top: 0%;
+  left: 100%;
+  transform: translate(150%,50%);
+}
+
+.arrow-down {
+  top: 100%;
+  left: 100%;
+  transform: translate(150%,-150%);
+}
+
 
 @keyframes flashingAnimation {
   0% {
@@ -226,18 +195,21 @@ input:checked + .slider:before {
   }
 }
 
-.game-boy-border {
+/* Game Boy */
+
+.game-boy {
   position: absolute;
   left: 50%;
   bottom: 0%;
-  transform: translate(-50%, 0);
+  transform: translate(-55%, 0); 
+  z-index: 99;
 
-  display: inline-block;
+  display: none;
   margin: 0 2.5rem;
   padding: 1.5rem 1rem 1rem;
-  background-color: white;
+  background-color: #c0c0c0;
   border-radius: 1rem;
-  box-shadow: 0 -0.5rem 0 0 rgb(218, 218, 218);
+  box-shadow: 0.5rem -0.5rem 0 0 grey;
 }
 
 .game-boy-control {
@@ -271,6 +243,7 @@ input:checked + .slider:before {
 
 .ctl-sq:hover {
   cursor: pointer;
+  /* transform: translate(0, -0.125rem); */
   background-color: #637179;
 }
 
@@ -281,37 +254,49 @@ input:checked + .slider:before {
 }
 
 #middle-btn {
-  border: 0.125rem solid #637179;
-  box-shadow: -0.15rem -0.15rem 0 0 grey;
+  height: 2.25rem;
+  width: 2.25rem;
+  /* cursor: auto; */
+  /* border: 0.125rem solid #637179; */
+  /* box-shadow: -0.15rem -0.15rem 0 0 grey; */
 }
+
+.ctl-sq:hover #middle-btn {
+  cursor: auto;
+  /* transform: translate(0, -0.125rem); */
+  background-color: #283136;
+}
+
 
 #top-btn {
   transform: translate(0, -100%);
-  border: 0.25rem solid white;
+  border: 0.25rem solid grey;
   border-bottom: 0;
-  box-shadow: -0.15rem -0.15rem 0 0 grey;
+  /* box-shadow: -0.15rem -0.15rem 0 0 grey; */
 }
 
 #right-btn {
   transform: translate(100%, 0%);
-  border: 0.25rem solid white;
+  border: 0.25rem solid grey;
   border-left: 0;
-  box-shadow: -0.15rem -0.15rem 0 0 grey;
+  /* box-shadow: -0.15rem -0.15rem 0 0 grey; */
 }
 
 #bottom-btn {
   transform: translate(0, 100%);
-  border: 0.25rem solid white;
+  border: 0.25rem solid grey;
   border-top: 0;
-  box-shadow: -0.15rem -0.15rem 0 0 grey;
+  /* box-shadow: -0.15rem -0.15rem 0 0 grey; */
 }
 
 #left-btn {
   transform: translate(-100%, 0);
-  border: 0.25rem solid white;
+  border: 0.25rem solid grey;
   border-right: 0;
-  box-shadow: -0.15rem -0.15rem 0 0 grey;
+  /* box-shadow: -0.15rem -0.15rem 0 0 grey; */
 }
+
+
 
 .middle-control {
   display: flex;
@@ -376,7 +361,7 @@ input:checked + .slider:before {
 .right-control {
   width: 10rem;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   /* justify-content: space-between; */
 }
 
@@ -415,6 +400,74 @@ input:checked + .slider:before {
   border-radius: 0.5rem;
 }
 
-.right-gap {
-  width: 1rem;
+/* Home button */
+
+.start-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.start-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.start-bg {
+  background-color: grey;
+  border-radius: 1rem;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  /* outline-offset: 6px; */
+  transition: filter 600ms;
+  z-index: 6;
+}
+
+
+.start-word {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  display:block;
+  border-radius: 1rem;
+  background-color: #5d5b7e;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #f0ece5;
+  padding: 0.5rem 1.5rem; 
+  z-index: 1;
+  transform: translate(0,-0.4rem);
+  will-change: transform;
+  transition: transform 150ms;
+}
+
+
+/* Home button transitions */
+
+.start-bg:hover {
+  transition: filter 250ms;
+  filter: brightness(110%);
+}
+
+.start-bg:hover .start-btn {
+  transform: translate(0, -0.6rem);
+  transition: transform 150ms;
+}
+
+.start-bg:active .start-btn {
+  transform: translate(0, -0.125rem);
+  transition: transform 25ms;
 }

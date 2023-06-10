@@ -5,94 +5,35 @@
 
 /* Applies to whole document */
 
-body {
-}
-
-
-.gradient-bg {
-  /* background: linear-gradient(to bottom right, #8de8c6, #ecf59a); */
-  /* background: linear-gradient(to bottom right, #8de8c6, #ecf59a); */
-  background-color: #efeceb;
-}
-
-
-
-#outer-box {
-  min-height: 90vh;
-  min-width: 90vb;
-  max-width: 1280px;
-  
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  /* margin: 0 auto; */
-  border: 50px solid #626b7a;
-  border-radius: 16px 16px 128px 16px;
-  border-right: 150px solid #626b7a;
-}
-
-
-#root {
-  /* background-color: #f3ffe9; */
-  background-color: #bcbec8;
-  min-height: 100vh;
-  /* margin: 0 10vh; */
-  max-width: 1280px;
-  /* width: 100%; */
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-size: 16px; /*setting the root font size for rem measurments */
-  /* -webkit-font-smoothing: antialiased;
+* {
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility; */
+  text-rendering: optimizeLegibility;
 }
 
-/* 
-.heading-1 {
-  font-size: 4rem;
-}
 
-.heading-2 {
-  font-size: 3rem;
-}
 
-.heading-3 {
-  font-size: 2vh;
-} */
-
-#navbar {
+.logo-main {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #a69ea8;
+  justify-content: center;
 
-  /* padding: 0.5rem 0; */
-  /* border-bottom: 1px solid #5C4AFF; */
-  /* backdrop-filter: blur(8px); */
-  /* position: fixed;
-  top:0px;
-  left: 0px; */
-  width: 100%;
 }
+
 
 .logo-font {
   font-family: 'Space Mono', monospace;
   -webkit-text-stroke-width: 1px;
+  padding: 0.3rem;
+  font-size: 3rem;
 }
 
 .logo-color{
   color: #5C4AFF;
 }
 
-.logo {
-  padding: 0.3rem;
-  font-size: 3rem;
-}
-
 @media screen and (max-width: 1600px) {
-  .logo {
+  .logo-font {
     padding: 0.3rem;
     font-size: 2rem;
   }
@@ -123,41 +64,26 @@ body {
 
 
 /* Hero */
-#hero {
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 0.5rem;
-  /* padding: 0 12rem; */
-}
-
-@media screen and (max-width: 1600px) {
-  #hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.5rem;
-  }
-}
-
-#hero-title {
+.hero-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem;
+  padding-top: 50%;
 }
 
-.title-font {
+.hero-title {
   font-family: 'Space Mono', monospace;
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.25;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   -webkit-text-stroke-width: 1px;
+  text-align: center;
 }
 
-.subtitle-font {
+.hero-subtitle {
   font-size: 1.75em;
+  line-height: 2.25rem;
 }
 
 #hero-img {
@@ -186,7 +112,7 @@ body {
   top: 0; */
   text-align: center;
   padding: 1rem 0px; /*1rem = 16px*/
-  z-index:3;
+  z-index: 10;
 }
 
 .word-big-font {
@@ -201,23 +127,39 @@ body {
 .main-container {
   position: relative;
   width: 100%;
-  height: 800vh; /*need to set height for position:sticky to work */
+  height: 700vh; /*need to set height for position:sticky to work */
+  z-index:7;
 }
 
-.main-overlay {
+/* .main-overlay {
   position: relative;
   height: 100%;
   width: 100%;
-}
+} */
 /* For words */
 .front-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 9;
+  /* background-color: red; */
   text-align: center;/*so all words below are centered*/
 }
+
+.back-container {
+  position: sticky;
+  top: 0;
+  min-height: 70vh;
+  width: 100%;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+  font-size: 0px; /*need to set to 0 to eliminate spacings*/
+}
+
 
 .word-spacing-full {
   padding-top: 100vh;
@@ -242,26 +184,15 @@ body {
   padding: 3rem 0px;
   /* margin-bottom: 5rem; */
   /* background-color: #02E7AE; */
-  z-index: 3;
+  z-index: 10;
 }
 
-.back-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0px; /*need to set to 0 to eliminate spacings*/
-}
 
 
 .icon-center {
   position: relative;
-  height: 9vh;
-  width: 9vh;
+  height: 10px;
+  width: 10px;
 }
 
 .icon {
@@ -273,7 +204,7 @@ body {
   /* height: 9vh;
   width: 9vh; */
   margin: 0;
-  box-shadow: 0.5rem 0.5rem 0 0 #5C4AFF;
+  /* box-shadow: 0.5rem 0.5rem 0 0 #5C4AFF, 80px 30px 0 0 rgba(0, 0, 0, 1), 90px 30px 0 0 rgba(0, 0, 0, 1); */
 }
 
 .overlay {
@@ -414,11 +345,11 @@ body {
 }
 
 #pfp1 {
-  z-index: 1;
+  z-index: 8;
 }
 
 #headshot1 {
-  z-index: 2;
+  z-index: 9;
 }
 
 
