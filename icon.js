@@ -81,25 +81,21 @@ const viewportHeight = window.gameScreen.innerHeight || document.documentElement
 
 const viewportCenter = viewportHeight / 2;
 
-const viewportEqual = viewportHeight / 5;
-
 const wordDisappear = viewportHeight / 10 * 4;
 
 
 
 // word1
-// window.gameScreen.addEventListener("scroll", function() {
-//   console.log('im here');
-//   if(word1.getBoundingClientRect().top < viewportHeight / 2) {
-//     word1.classList.add('hidden');
-//   } else {
-//     word1.classList.remove('hidden');
-//   }
-// })
+window.gameScreen.addEventListener("scroll", function() {
+  console.log('im here');
+  if(word1.getBoundingClientRect().top < viewportHeight / 2) {
+    word1.classList.add('hidden');
+  } else {
+    word1.classList.remove('hidden');
+  }
+})
 
 // icon1
-
-// const frontContainer = document.querySelector('front-container');
 
 window.gameScreen.addEventListener("scroll", function() {
   if(word1.getBoundingClientRect().top < viewportCenter) {
@@ -113,13 +109,13 @@ window.gameScreen.addEventListener("scroll", function() {
 
 
 // word2
-// window.gameScreen.addEventListener("scroll", function() {
-//   if(word2.getBoundingClientRect().top < wordDisappear) {
-//     word2.classList.add('hidden');
-//   } else {
-//     word2.classList.remove('hidden');
-//   }
-// })
+window.gameScreen.addEventListener("scroll", function() {
+  if(word2.getBoundingClientRect().top < wordDisappear) {
+    word2.classList.add('hidden');
+  } else {
+    word2.classList.remove('hidden');
+  }
+})
 
 // icon2
 window.gameScreen.addEventListener("scroll", function() {

@@ -49,7 +49,6 @@ function checkBoxStyle() {
 checkBox.addEventListener('change', checkBoxStyle)
 
 
-
 startBtn.addEventListener('change', function () {
   console.log('its on');
   // if checkBox is off (unchecked), startBtn shouldn't work
@@ -66,9 +65,43 @@ startBtn.addEventListener('change', function () {
 
 
 
+function simulateScrollUp() {
+  var event = new KeyboardEvent('keydown', {
+    deltaY: -100, // Adjust this value as per your scrolling requirements
+    bubbles: true,
+    cancelable: true
+  });
 
-  
+  window.gameScreen.dispatchEvent(event);
+}
+
+// Add an event listener to the button
+var topBtn = document.getElementById('top-btn');
+topBtn.addEventListener('click', () => {
+  simulateScrollUp();
+  console.log('its working');
+});
 
 
+var heroSection = document.querySelector('.hero-section');
+var postCredit = document.querySelector('.post-credits');
+var scrollUp = document.querySelector('#scrollUp');
+var scrollDown = document.querySelector('#scrollDown');
+
+window.gameScreen.addEventListener("scroll", function() {
+  if(heroSection.getBoundingClientRect().top < 100) {
+    scrollUp.style.display="block";
+  } else {
+    scrollUp.style.display="none";
+  }
+})
+
+window.gameScreen.addEventListener("scroll", function() {
+  if(postCredit.getBoundingClientRect().bottom < 1500) {
+    scrollDown.style.display="none";
+  } else {
+    scrollDown.style.display="block";
+  }
+})
 
 
