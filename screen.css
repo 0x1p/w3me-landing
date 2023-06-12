@@ -11,6 +11,12 @@
   text-rendering: optimizeLegibility;
 }
 
+/* .image-slot {
+  height: 3rem;
+  width: 3rem;
+} */
+
+
 
 
 .logo-main {
@@ -488,251 +494,251 @@
 
 /* Logos */
 
-#uniswap2a {
+#icon2a {
   transform: translate(50%, -100%);
 }
 
-#uniswap2b {
+#icon2b {
   transform: translate(100%, 0%);
 }
 
-#uniswap2c{
+#icon2c{
   transform: translate(50%, 100%);
 }
 
-#uniswap2d{
+#icon2d{
   transform: translate(-50%, 100%);
 }
 
-#uniswap2e {
+#icon2e {
   transform: translate(-100%, 0%);
 }
 
-#uniswap2f {
+#icon2f {
   transform: translate(-50%, -100%);
 }
 
-#uniswap3a {
+#icon3a {
   transform: translate(50%, -200%);
 }
 
-#uniswap3b {
+#icon3b {
   transform: translate(150%, -150%);
 }
 
-#uniswap3c{
+#icon3c{
   transform: translate(200%, -50%);
 }
 
-#uniswap3d{
+#icon3d{
   transform: translate(200%, 50%);
 }
 
-#uniswap3e {
+#icon3e {
   transform: translate(150%, 150%);
 }
 
-#uniswap3f {
+#icon3f {
   transform: translate(50%, 200%);
 }
 
 
-#uniswap3g {
+#icon3g {
   transform: translate(-50%, 200%);
 }
 
-#uniswap3h {
+#icon3h {
   transform: translate(-150%, 150%);
 }
 
-#uniswap3i {
+#icon3i {
   transform: translate(-200%, 50%);
 }
 
-#uniswap3j {
+#icon3j {
   transform: translate(-200%, -50%);
 }
 
-#uniswap3k {
+#icon3k {
   transform: translate(-150%, -150%);
 }
 
-#uniswap3l {
+#icon3l {
   transform: translate(-50%, -200%);
 }
 
 
 
-#uniswap4a {
+#icon4a {
   transform: translate(50%, -300%);
 }
 
-#uniswap4b {
+#icon4b {
   transform: translate(150%, -250%);
 }
 
-#uniswap4c {
+#icon4c {
   transform: translate(250%, -200%);
 }
 
-#uniswap4d {
+#icon4d {
   transform: translate(300%, -100%);
 }
 
-#uniswap4e {
+#icon4e {
   transform: translate(300%, 0%);
 }
 
-#uniswap4f {
+#icon4f {
   transform: translate(300%, 100%);
 }
 
-#uniswap4g {
+#icon4g {
   transform: translate(250%, 200%);
 }
 
-#uniswap4h {
+#icon4h {
   transform: translate(150%, 250%);
 }
 
-#uniswap4i {
+#icon4i {
   transform: translate(50%, 300%);
 }
 
-#uniswap4j {
+#icon4j {
   transform: translate(-50%, 300%);
 }
 
-#uniswap4k {
+#icon4k {
   transform: translate(-150%, 250%);
 }
 
-#uniswap4l {
+#icon4l {
   transform: translate(-250%, 200%);
 }
 
-#uniswap4m {
+#icon4m {
   transform: translate(-300%, 100%);
 }
 
-#uniswap4n {
+#icon4n {
   transform: translate(-300%, 0%);
 }
 
-#uniswap4o {
+#icon4o {
   transform: translate(-300%, -100%);
 }
 
-#uniswap4p {
+#icon4p {
   transform: translate(-250%, -200%);
 }
 
-#uniswap4q {
+#icon4q {
   transform: translate(-150%, -250%);
 }
 
-#uniswap4r {
+#icon4r {
   transform: translate(-50%, -300%);
 }
 
 
 
-#uniswap5a {
+#icon5a {
   transform: translate(50%, -400%);
 }
 
-#uniswap5b {
+#icon5b {
   transform: translate(150%, -350%);
 }
 
-#uniswap5c {
+#icon5c {
   transform: translate(250%, -300%);
 }
 
-#uniswap5d {
+#icon5d {
   transform: translate(350%, -250%);
 }
 
-#uniswap5e {
+#icon5e {
   transform: translate(400%, -150%);
 }
 
-#uniswap5f {
+#icon5f {
   transform: translate(400%, -50%);
 }
 
-#uniswap5g {
+#icon5g {
   transform: translate(400%, 50%);
 }
 
-#uniswap5h {
+#icon5h {
   transform: translate(400%, 150%);
 }
 
-#uniswap5i {
+#icon5i {
   transform: translate(350%, 250%);
 }
 
-#uniswap5j {
+#icon5j {
   transform: translate(250%, 300%);
 }
 
-#uniswap5k {
+#icon5k {
   transform: translate(150%, 350%);
 }
 
-#uniswap5l {
+#icon5l {
   transform: translate(50%, 400%);
 }
 
-#uniswap5m {
+#icon5m {
   transform: translate(-50%, 400%);
 }
 
-#uniswap5n {
+#icon5n {
   transform: translate(-150%, 350%);
 }
 
-#uniswap5o {
+#icon5o {
   transform: translate(-250%, 300%);
 }
 
-#uniswap5p {
+#icon5p {
   transform: translate(-350%, 250%);
 }
 
-#uniswap5q {
+#icon5q {
   transform: translate(-400%, 150%);
 }
 
-#uniswap5r {
+#icon5r {
   transform: translate(-400%, 50%);
 }
 
-#uniswap5s {
+#icon5s {
   transform: translate(-400%, -50%);
 }
 
-#uniswap5t {
+#icon5t {
   transform: translate(-400%, -150%);
 }
 
-#uniswap5u {
+#icon5u {
   transform: translate(-350%, -250%);
 }
 
-#uniswap5v {
+#icon5v {
   transform: translate(-250%, -300%);
 }
 
-#uniswap5w {
+#icon5w {
   transform: translate(-150%, -350%);
 }
 
-#uniswap5x {
+#icon5x {
   transform: translate(-50%, -400%);
 }
 
-#uniswap5y {
+#icon5y {
   transform: translate(-50%, -400%);
 }

@@ -1,6 +1,0 @@
-console.log('ready1')
-
-
-
-
-
