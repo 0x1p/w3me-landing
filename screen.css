@@ -261,6 +261,8 @@
 
 .post-credits {
   padding-top: 20rem;
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
 }
 
 /* Logos */
